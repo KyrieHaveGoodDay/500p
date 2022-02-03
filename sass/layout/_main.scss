@@ -1,0 +1,1444 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300&display=swap");
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexming.css);
+$main_dec: "Noto Serif TC", serif;
+$main_text: "cwTeXMing", serif; //明字體
+
+$main_color: #e9454c; //主視覺顏色
+
+$ipad: 1024px;
+$phone: 768px;
+.kyrie_active {
+    display: none !important;
+    @media screen and(max-width:$phone) {
+        display: block !important;
+    }
+}
+
+.load {
+    width: 100%;
+    height: 100%;
+    background: $main_color;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.size {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.main {
+    position: relative;
+}
+.main_bg {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/fake_bg2.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-position: center top;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+    @media screen and(max-width:$phone) {
+        // 這裡手機版好像會失效
+        background-image: url(../img/m_bg4.png);
+        // background-repeat: no-repeat;
+        // background-size: contain;
+        background-repeat: repeat;
+
+        // background-position: 100% 100%;
+    }
+}
+
+// icon
+.icon_box {
+    .light1 {
+        position: absolute;
+
+        top: 12%;
+        left: 7%;
+        z-index: 5;
+        transform: scale(0);
+        @media screen and(max-width:2000px) {
+            z-index: -1;
+        }
+        @media screen and(max-width:1600px) {
+            display: none;
+        }
+        @media screen and(max-width:$phone) {
+            display: none;
+        }
+    }
+    .light2 {
+        position: absolute;
+        top: 8%;
+        right: 11%;
+        z-index: 5;
+        transform: scale(0);
+        @media screen and(max-width:2000px) {
+            z-index: -1;
+        }
+        @media screen and(max-width:1600px) {
+            display: none;
+        }
+        @media screen and(max-width:$phone) {
+            display: block;
+            z-index: 1;
+            width: 9%;
+            top: 4.5%;
+            right: 2%;
+        }
+        @media screen and(max-width:414px) {
+            top: 2.7%;
+            right: 6%;
+        }
+    }
+    .icon1 {
+        width: 6%;
+        position: absolute;
+        top: 1%;
+        left: 11%;
+        @media screen and(max-width:$phone) {
+            width: 11%;
+            top: 0;
+            left: 3%;
+            z-index: 1;
+        }
+    }
+    .icon2 {
+        position: absolute;
+        top: 1%;
+        left: 20%;
+        @media screen and(max-width:$phone) {
+            display: none;
+        }
+    }
+    .icon3 {
+        position: absolute;
+        top: 7%;
+        left: 17%;
+        @media screen and(max-width:$phone) {
+            display: none;
+        }
+    }
+    .icon4 {
+        position: absolute;
+        top: 8%;
+        left: 8%;
+        transform: translateX(-500px);
+        @media screen and(max-width:$phone) {
+            left: 1%;
+            top: 1.5%;
+            z-index: 1;
+            width: 10%;
+            transform: rotate(-20deg);
+        }
+        @media screen and(max-width:414px) {
+            top: 1.2%;
+            transform: translateX(-500px) rotate(-20deg);
+        }
+    }
+    .icon5 {
+        position: absolute;
+        top: 6%;
+        right: 5%;
+        transform: translateX(500px);
+        @media screen and(max-width:$phone) {
+            display: none;
+        }
+    }
+    .icon6 {
+        position: absolute;
+        top: 4%;
+        right: 16%;
+        width: 3%;
+        transform: rotate(-90deg);
+        @media screen and(max-width:$phone) {
+            display: none;
+        }
+    }
+    .icon7 {
+        position: absolute;
+        top: 6%;
+        right: 16%;
+        width: 4%;
+        transform: rotate(-30deg);
+        @media screen and(max-width:$phone) {
+            top: 0;
+            right: 1%;
+        }
+    }
+}
+
+.bg_500 {
+    padding-top: 50px;
+    text-align: center;
+    position: relative;
+    margin: 0 10%;
+    @media screen and(max-width:$phone) {
+        padding-top: 20px;
+    }
+
+    .title5 {
+        // display: block;
+        @media screen and(max-width:$phone) {
+            display: none;
+        }
+    }
+    .title_m {
+        display: none;
+        @media screen and(max-width:$phone) {
+            display: block;
+        }
+    }
+}
+
+// 第一個文案
+.content_500 {
+    width: 100%;
+    background-image: url(../img/text_bg2.jpg);
+    // background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0 -510px;
+    // border: 1px solid black;
+    transform: translateY(-20px);
+    @media screen and (max-width: $phone) {
+        background-image: url(../img/text_bg2_M.png);
+        background-position: 0 -110px;
+    }
+    .content_box {
+        transition: 0.5s;
+
+        .content_text {
+            padding: 50px 0;
+            // border: 1px solid black;
+            color: #eee;
+            text-align: center;
+            font-family: $main_text;
+            font-weight: lighter;
+            line-height: 1.8;
+            letter-spacing: 5px;
+            font-size: 20px;
+            @media screen and (max-width: 414px) {
+                font-size: 16px;
+                padding: 10px 10px;
+                line-height: 1.5;
+                letter-spacing: 2px;
+            }
+            @media screen and (max-width: 375px) {
+                // padding: 10px 0px;
+            }
+            .content_br {
+                @media screen and (max-width: 414px) {
+                    display: none;
+                }
+            }
+            .content_br2 {
+                display: none;
+                @media screen and (max-width: 414px) {
+                    display: none;
+                }
+                @media screen and (max-width: 375px) {
+                    display: none;
+                }
+            }
+            .content_br3 {
+                @media screen and (max-width: 414px) {
+                    display: none;
+                }
+                @media screen and (max-width: 375px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+// 粉絲好拉風
+.fan {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    .fan_data {
+        @media screen and (max-width: 414px) {
+            margin: 0 20px;
+        }
+    }
+
+    // 每個卡片
+    .card_box {
+        // border: 1px solid black;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        grid-gap: 20px;
+        @media screen and (max-width: 1000px) {
+            padding: 0 15px;
+        }
+        @media screen and (max-width: $phone) {
+            display: block;
+            padding: 0 40px;
+        }
+        @media screen and (max-width: 414px) {
+            padding: 0 20px;
+        }
+        .card_main {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            @media screen and (max-width: 900px) {
+                height: 430px;
+            }
+            @media screen and (max-width: 830px) {
+                height: 385px;
+            }
+            @media screen and (max-width: $phone) {
+                height: 550px;
+                margin-bottom: 20px;
+            }
+            @media screen and (max-width: 660px) {
+                height: 500px;
+            }
+            @media screen and (max-width: 600px) {
+                height: 450px;
+            }
+            @media screen and (max-width: 550px) {
+                height: 420px;
+            }
+            @media screen and (max-width: 480px) {
+                // height: 360px;
+            }
+            @media screen and (max-width: 414px) {
+                height: 360px;
+            }
+            @media screen and (max-width: 375px) {
+                height: 340px;
+            }
+            @media screen and (max-width: 350px) {
+                height: 320px;
+            }
+
+            .card_bg1 {
+                width: 100%;
+                height: 100%;
+                background: #cfa972;
+                border: 1px solid black;
+                transform: translate(10px, 10px);
+                transition: 0.5s;
+            }
+            .card_bg2 {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: 100%;
+                height: 100%;
+                border: 1px solid black;
+                background: #bfbaba;
+                transition: 0.5s;
+            }
+            .card_content {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: #0d0d0d;
+                padding: 10px;
+                &:hover {
+                    .card_bg1 {
+                        transform: translate(0, 0);
+                    }
+                    .card_bg2 {
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                img {
+                    width: 100%;
+                }
+                // 小標題
+                .card_title {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @media screen and (max-width: 414px) {
+                        margin-top: 10px;
+                    }
+                    .list_left {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .left {
+                            width: 8px;
+                            height: 8px;
+                            border: 1px solid #c5a16d;
+                            border-radius: 50%;
+                            margin: 0 5px;
+                        }
+                    }
+                    .list_main {
+                        color: #f6c378;
+                        font-family: $main_text;
+                        font-size: 30px;
+                        letter-spacing: 5px;
+                        margin: 0 5px;
+                        font-weight: bold;
+                        @media screen and (max-width: 900px) {
+                            font-size: 24px;
+                        }
+                        @media screen and (max-width: $phone) {
+                            font-size: 35px;
+                        }
+                        @media screen and (max-width: 553px) {
+                            font-size: 24px;
+                        }
+
+                        @media screen and (max-width: 462px) {
+                            letter-spacing: normal;
+                        }
+                        @media screen and (max-width: 375px) {
+                            font-size: 20px;
+                        }
+                        @media screen and (max-width: 350px) {
+                            font-size: 16px;
+                        }
+                    }
+                    .list_four {
+                        line-height: 1;
+                        text-align: center;
+                        margin-top: 10px;
+                        @media screen and (max-width: 414px) {
+                            margin-bottom: 10px;
+                            // margin-top: 0;
+                        }
+                    }
+                    .list_right {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .right {
+                            width: 8px;
+                            height: 8px;
+                            border: 1px solid #c5a16d;
+                            border-radius: 50%;
+                            margin: 0 5px;
+                        }
+                    }
+                }
+                p {
+                    font-size: 21px;
+                    color: #ffffff;
+                    font-family: $main_text;
+                    text-align: center;
+                    line-height: 30px;
+                    // padding-bottom: 15px;
+                    @media screen and (max-width: 414px) {
+                        font-size: 16px;
+                        line-height: 25px;
+                    }
+                    @media screen and (max-width: 350px) {
+                        font-size: 12px;
+                    }
+                    .November{
+                        position: static;
+                        font-weight: bold;
+                        @media screen and (max-width: 414px) {
+                            font-size: 16px;
+                        }
+                    }
+                }
+                
+            }
+            span {
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+                color: white;
+                @media screen and (max-width: 414px) {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+// 小標文字
+.fan_small {
+    margin: 20px 0 50px 0;
+    @media screen and (max-width: 414px) {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    p {
+        color: white;
+        text-align: center;
+        font-size: 26px;
+        font-family: $main_text;
+        font-weight: lighter;
+        @media screen and (max-width: 414px) {
+            font-size: 20px;
+            font-weight: 900;
+        }
+    }
+}
+// 眾星雲集
+.heavy {
+    .heavy_title {
+        margin-bottom: 20px;
+        line-height: normal;
+        @media screen and (max-width: 768px) {
+            margin: 0 40px;
+        }
+        @media screen and (max-width: 414px) {
+            margin: 0 20px !important;
+        }
+        div {
+            @media screen and (max-width: 414px) {
+                padding: 5px 0;
+            }
+        }
+    }
+    .heavy_content {
+        position: relative;
+        padding: 0 110px;
+        @media screen and (max-width: $phone) {
+            padding: 0 50px;
+        }
+        @media screen and (max-width: 414px) {
+            padding: 0 10px;
+        }
+        div {
+            @media screen and (max-width: 414px) {
+                line-height: 1.5;
+            }
+        }
+    }
+    .heavy_content_top {
+        position: relative;
+        @media screen and (max-width: $phone) {
+            display: block;
+        }
+
+        .heavy_br1 {
+            @media screen and (max-width: 414px) {
+                display: none;
+            }
+        }
+        .heavy_br2 {
+            @media screen and (max-width: 414px) {
+                display: none;
+            }
+        }
+        .heavy_br3 {
+            @media screen and (max-width: 414px) {
+                display: none;
+            }
+        }
+
+        .heavy_hr {
+            display: none;
+            @media screen and (max-width: 414px) {
+                display: none;
+            }
+        }
+        .heavy_icon {
+            position: absolute;
+            top: -60%;
+            left: -28%;
+            @media screen and (max-width: $phone) {
+                position: static;
+                width: 13%;
+                object-fit: contain;
+                display: none;
+            }
+            @media screen and (max-width: 550px) {
+                width: 20%;
+            }
+            @media screen and (max-width: 414px) {
+                width: 12%;
+                // transform: translateX(-10px);
+            }
+        }
+    }
+    .heavy_content_btn {
+        @media screen and (max-width: 414px) {
+            // padding-left: 25px;
+            // padding-right: 20px;
+            letter-spacing: 2px;
+        }
+        .mb1 {
+            @media screen and (max-width: 414px) {
+                display: none;
+            }
+        }
+    }
+}
+// 明星(三天)
+.star {
+    width: 2000px;
+    margin: 0 auto;
+    background-image: url(../img/paper.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    // border: 1px solid black;
+    padding: 130px 80px 40px 60px;
+    margin-bottom: 20px;
+    @media screen and (max-width: 2000px) {
+        width: 100%;
+    }
+    @media screen and (max-width: 1504px) {
+        padding: 80px 80px 40px 60px;
+    }
+    @media screen and (max-width: 900px) {
+        padding: 60px 80px 40px 60px;
+    }
+    @media screen and (max-width: $phone) {
+        padding: 60px 40px 20px 40px;
+        background-image: url(../img/paper_m.png);
+    }
+    @media screen and (max-width: 414px) {
+        padding: 60px 20px 20px 20px;
+        background-image: url(../img/paper_m.png);
+    }
+    .maxImg {
+        text-align: center;
+        // padding: 200px 0;
+        // margin-bottom: 50px;
+        // border: 1px solid black;
+        img {
+            width: 90%;
+            text-align: center;
+            margin: 0 auto;
+            // height: 100%;
+            @media screen and (max-width: 2000px) {
+                //  height: 100%;
+            }
+            @media screen and (max-width: $phone) {
+                width: 100%;
+            }
+        }
+        .d1 {
+            display: block;
+            @media screen and (max-width: $phone) {
+                display: none;
+            }
+        }
+        .d1_m {
+            display: none;
+            @media screen and (max-width: $phone) {
+                display: block;
+            }
+        }
+        .d2 {
+            display: block;
+            @media screen and (max-width: $phone) {
+                display: none;
+            }
+        }
+        .d2_m {
+            display: none;
+            @media screen and (max-width: $phone) {
+                display: none;
+                // swiper-container
+                // swiper-wrapper
+                // swiper-slide
+            }
+        }
+        .D2_222 {
+            display: none;
+            @media screen and (max-width: $phone) {
+                display: none;
+            }
+        }
+        .d3 {
+            display: block;
+            @media screen and (max-width: $phone) {
+                display: none;
+            }
+        }
+        .d3_m {
+            display: none;
+            @media screen and (max-width: $phone) {
+                display: block;
+            }
+        }
+    }
+    .star_nav {
+        // border: 1px solid black;
+    }
+}
+// .swiper-container2{
+//     width: 100%;
+//     height: 500px;
+// }
+.nav-link {
+    color: blue !important;
+    background-color: transparent !important;
+    font-size: 60px;
+    font-family: $main_dec;
+    font-weight: 900;
+    line-height: 50px;
+    @media screen and (max-width: 1024px) {
+        font-size: 40px;
+        line-height: 30px;
+    }
+    @media screen and (max-width: 900px) {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    @media screen and (max-width: 504px) {
+        font-size: 20px;
+        // line-height: 30px;
+    }
+    @media screen and (max-width: 417px) {
+        font-size: 16px;
+    }
+    @media screen and (max-width: 414px) {
+        font-size: 28px;
+    }
+    @media screen and (max-width: 375px) {
+        font-size: 24px;
+    }
+    @media screen and (max-width: 345px) {
+        padding: 0.5rem 0.5rem !important;
+    }
+    .bg_check {
+        // text-align: center;
+        // margin: 0 auto;
+        margin-left: 50px;
+        width: 30px;
+        height: 40px;
+        background-image: url(../img/check2.png);
+        background-repeat: no-repeat;
+        background-position: 0 -40px;
+        @media screen and (max-width: 900px) {
+            margin-left: 20px;
+        }
+        @media screen and (max-width: 414px) {
+            margin-left: 15px;
+        }
+        @media screen and (max-width: 381px) {
+            margin-left: 10px;
+        }
+    }
+}
+.active {
+    color: red !important;
+    .bg_check {
+        background-position: 0 0 !important;
+    }
+}
+
+// 輪播
+.swiper-container {
+    width: 100%;
+    height: 555px;
+    @media screen and (max-width: $phone) {
+        height: 270px;
+    }
+    .fake_left {
+        position: absolute;
+        left: 0;
+        z-index: 10;
+        width: 25%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        @media screen and (max-width: $phone) {
+            width: 13% !important;
+        }
+    }
+    .fake_right {
+        position: absolute;
+        right: 0;
+        z-index: 10;
+        width: 28%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        @media screen and (max-width: $phone) {
+            width: 12.1% !important;
+        }
+    }
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .swiper-slide-active {
+        @media screen and (max-width: $phone) {
+            width: 13% !important;
+        }
+    }
+    .swiper-slide-next {
+        // width: 680px !important;
+        width: 47% !important;
+        @media screen and (max-width: $phone) {
+            width: 75% !important;
+        }
+    }
+}
+// 768 fake2 fake3 88
+
+.fake3 {
+    @media screen and (max-width: $phone) {
+        display: none;
+    }
+}
+
+// .swiper-slide-prev{
+//     width: 680px !important;
+// }
+
+.pwoer_main {
+    @media screen and (max-width: 414px) {
+        margin-top: 10px;
+    }
+}
+
+.power {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    @media screen and (max-width: $phone) {
+        padding: 0 40px;
+    }
+    @media screen and (max-width: 414px) {
+        padding: 0 20px;
+    }
+
+    // 第一塊
+    .power_one {
+        width: 100%;
+        position: relative;
+        height: 450px;
+        @media screen and (max-width: $phone) {
+            height: 650px;
+        }
+        @media screen and (max-width: 600px) {
+            height: 580px;
+        }
+        @media screen and (max-width: 500px) {
+            height: 530px;
+        }
+        @media screen and (max-width: 450px) {
+            height: 475px;
+        }
+        @media screen and (max-width: 414px) {
+            height: 530px;
+        }
+        @media screen and (max-width: 375px) {
+            // height: 500px;
+        }
+
+        .power_bg {
+            width: 100%;
+            height: 100%;
+            background: #654517;
+            border: 2px solid black;
+            transform: translate(5px, 5px);
+        }
+        .power_data {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            background: #cfa972;
+
+            padding: 15px 35px 20px 35px;
+
+            @media screen and (max-width: 414px) {
+                padding: 15px 10px 5px 10px;
+            }
+            .data_top {
+                display: grid;
+                grid-template-columns: 43% 57%;
+                align-items: center;
+                @media screen and (max-width: $phone) {
+                    display: block;
+                }
+                .data_left {
+                    width: 100%;
+                    // margin-top: 40px;
+                    text-align: center;
+                    .data_left_title {
+                        font-family: $main_text;
+                        font-size: 25px;
+                        color: #d6483a;
+                        font-weight: 900;
+                        display: flex;
+                        align-items: flex-end;
+                        @media screen and (max-width: $phone) {
+                            justify-content: center;
+                        }
+                        @media screen and (max-width: 500px) {
+                            display: block;
+                        }
+                        img {
+                            width: 300px;
+                            height: 60px;
+                            object-fit: cover;
+                            // transform: scale(1.7);
+                            @media screen and (max-width: 414px) {
+                                // transform: scale(1);
+                            }
+                        }
+                        span {
+                            @media screen and (max-width: 500px) {
+                                display: block;
+                                line-height: normal;
+                            }
+                            @media screen and (max-width: 414px) {
+                                display: block;
+                                line-height: normal;
+                            }
+                        }
+                    }
+                    .dotted {
+                        width: 95%;
+                        overflow: hidden;
+                        margin: -10px auto;
+                        margin-bottom: 10px;
+                        font-size: 20px;
+                        color: #140b01;
+                        letter-spacing: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        @media screen and (max-width: $phone) {
+                            width: 90%;
+                        }
+                    }
+                    p {
+                        color: #633502;
+                        font-family: $main_text;
+                        font-size: 17px;
+                        line-height: 30px;
+                        font-weight: 600;
+                        letter-spacing: 3px;
+                        @media screen and (max-width: 871px) {
+                            font-size: 16px;
+                        }
+                        @media screen and (max-width: $phone) {
+                            font-size: 20px;
+                            margin-bottom: 10px;
+                        }
+                        @media screen and (max-width: 550px) {
+                            font-size: 16px;
+                        }
+                        @media screen and (max-width: 500px) {
+                            line-height: 20px;
+                        }
+                        @media screen and (max-width: 414px) {
+                            line-height: 1.5;
+                            letter-spacing: normal;
+                        }
+                    }
+                    .data_wran {
+                        color: white;
+                        background: #000;
+                        transform: translateY(2px);
+                        @media screen and (max-width:$phone) {
+                            transform: translateY(0);
+                        }
+                    }
+                }
+                .data_right {
+                    width: 100%;
+
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        @media screen and (max-width: $phone) {
+                            height: 250px;
+                            object-fit: cover;
+                        }
+                        @media screen and (max-width: 600px) {
+                            height: 200px;
+                            // object-fit: cover;
+                        }
+                        @media screen and (max-width: 550px) {
+                            height: 180px;
+                            // object-fit: cover;
+                        }
+                        @media screen and (max-width: 500px) {
+                            height: 160px;
+                            // object-fit: cover;
+                        }
+                        @media screen and (max-width: 486px) {
+                            height: 150px;
+                            // object-fit: cover;
+                        }
+                        @media screen and (max-width: 450px) {
+                            height: 120px;
+                            // object-fit: cover;
+                        }
+                        @media screen and (max-width: 440px) {
+                            height: 100px;
+                            // object-fit: cover;
+                        }
+                        @media screen and (max-width: 414px) {
+                            height: 150px;
+                            object-fit: cover;
+                        }
+                    }
+                    .right_two {
+                        width: 100%;
+                        height: 240px;
+                        object-fit: cover;
+                        @media screen and (max-width: 600px) {
+                            height: 180px;
+                            // object-fit: cover;
+                        }
+                        @media screen and (max-width: 500px) {
+                            height: 150px;
+                            // object-fit: cover;
+                        }
+                        @media screen and (max-width: 450px) {
+                            height: 120px;
+                            // object-fit: cover;
+                        }
+                        @media screen and (max-width: 440px) {
+                            height: 100px;
+                            // object-fit: cover;
+                        }
+                        @media screen and (max-width: 414px) {
+                            height: 150px;
+                        }
+                    }
+                    &:nth-child(2) img {
+                        padding-left: 10px;
+                    }
+                }
+            }
+            .data_warn {
+                font-size: 36px;
+                background: #000;
+                color: #ffffff;
+                text-align: center;
+            }
+            .data_btn {
+                margin-top: 10px;
+                @media screen and (max-width: $phone) {
+                    margin-top: 0;
+                }
+                @media screen and (max-width: 414px) {
+                    margin-top: 0px;
+                }
+                .hour {
+                    @media screen and (max-width: $phone) {
+                        display: none;
+                    }
+                }
+                .hour2 {
+                    display: none;
+                    @media screen and (max-width: $phone) {
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+        // 四個點點
+        .power_border {
+            width: 10px;
+            height: 10px;
+            background: #f5d8af;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        .power1 {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+        }
+        .power2 {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+        }
+        .power3 {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+        }
+        .power4 {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+        }
+    }
+    .power_two {
+        width: 100%;
+        position: relative;
+        height: 280px;
+        @media screen and (max-width: $phone) {
+            height: 550px;
+        }
+        @media screen and (max-width: 600px) {
+            height: 450px;
+        }
+        @media screen and (max-width: 530px) {
+            height: 470px;
+        }
+        @media screen and (max-width: 500px) {
+            height: 470px;
+        }
+        @media screen and (max-width: 450px) {
+            height: 420px;
+        }
+        @media screen and (max-width: 414px) {
+            height: 430px;
+        }
+        @media screen and (max-width: 373px) {
+            height: 460px;
+        }
+        @media screen and (max-width: 349px) {
+            height: 480px;
+        }
+        .power_two_bg {
+            width: 100%;
+            height: 100%;
+            background: #cfa972;
+            border: 2px solid black;
+            transform: translate(5px, 5px);
+        }
+        .power_two_data {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            background: #654517;
+            display: grid;
+            grid-template-columns: 57% 43%;
+            align-items: center;
+            padding: 15px 35px 20px 35px;
+            grid-template-areas: "two_right two_left ";
+            @media screen and (max-width: $phone) {
+                display: block;
+            }
+            @media screen and (max-width: 414px) {
+                padding: 15px 10px 5px 10px;
+            }
+            .data_power_two_left {
+                grid-area: two_left;
+                width: 100%;
+                // margin-top: 40px;
+                text-align: center;
+                font-family: $main_text;
+                .data_left_title {
+                    font-family: $main_text;
+                    font-size: 25px;
+                    color: #d6483a;
+                    font-weight: 900;
+                    img {
+                        transform: scale(1.7);
+                        @media screen and (max-width: 414px) {
+                            transform: scale(1);
+                        }
+                    }
+                    span {
+                        @media screen and (max-width: 500px) {
+                            display: block;
+                            line-height: normal;
+                        }
+                        @media screen and (max-width: 414px) {
+                            display: block;
+                            line-height: normal;
+                        }
+                    }
+                }
+                .power_two_left {
+                    color: #fff;
+                    font-size: 24px;
+                    img {
+                        width: 40%;
+                        @media screen and (max-width: 500px) {
+                            display: block;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+                .dotted_power_two {
+                    width: 85%;
+                    overflow: hidden;
+                    margin: -10px auto;
+                    margin-bottom: 10px;
+                    font-size: 20px;
+                    color: #fad298;
+                    letter-spacing: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @media screen and (max-width: $phone) {
+                        width: 90%;
+                    }
+                }
+                p {
+                    color: #f6e6ce;
+                    font-family: $main_text;
+                    font-size: 16px;
+                    line-height: 30px;
+                    font-weight: 600;
+                    letter-spacing: 3px;
+                    @media screen and (max-width: 871px) {
+                        font-size: 16px;
+                    }
+                    @media screen and (max-width: $phone) {
+                        font-size: 20px;
+                        margin-bottom: 10px;
+                    }
+                    @media screen and (max-width: 550px) {
+                        font-size: 16px;
+                    }
+                    @media screen and (max-width: 500px) {
+                        line-height: 20px;
+                    }
+                    @media screen and (max-width: 414px) {
+                        line-height: 1.5;
+                        letter-spacing: normal;
+                        font-weight: 200;
+                    }
+                }
+            }
+            .data_power_two_right {
+                grid-area: two_right;
+                width: 100%;
+
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                img {
+                    width: 100%;
+                    height: 100%;
+                    @media screen and (max-width: $phone) {
+                        height: 250px;
+                        object-fit: cover;
+                    }
+                    @media screen and (max-width: 600px) {
+                        height: 200px;
+                        // object-fit: cover;
+                    }
+                    @media screen and (max-width: 550px) {
+                        height: 180px;
+                        // object-fit: cover;
+                    }
+                    @media screen and (max-width: 500px) {
+                        height: 160px;
+                        // object-fit: cover;
+                    }
+                    @media screen and (max-width: 486px) {
+                        height: 150px;
+                        // object-fit: cover;
+                    }
+                    @media screen and (max-width: 450px) {
+                        height: 120px;
+                        // object-fit: cover;
+                    }
+                    @media screen and (max-width: 440px) {
+                        height: 100px;
+                        // object-fit: cover;
+                    }
+                    @media screen and (max-width: 414px) {
+                        height: 150px;
+                        object-fit: cover;
+                    }
+                }
+                .right_two {
+                    width: 100%;
+                    height: 240px;
+                    object-fit: cover;
+                    @media screen and (max-width: 600px) {
+                        height: 180px;
+                        // object-fit: cover;
+                    }
+                    @media screen and (max-width: 500px) {
+                        height: 150px;
+                        // object-fit: cover;
+                    }
+                    @media screen and (max-width: 450px) {
+                        height: 120px;
+                        // object-fit: cover;
+                    }
+                    @media screen and (max-width: 440px) {
+                        height: 100px;
+                        // object-fit: cover;
+                    }
+                    @media screen and (max-width: 414px) {
+                        height: 150px;
+                    }
+                }
+                &:nth-child(2) img {
+                    padding-left: 10px;
+                }
+            }
+        }
+        // 四個點點
+        .power_border {
+            width: 10px;
+            height: 10px;
+            background: #f5d8af;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        .power1 {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+        }
+        .power2 {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+        }
+        .power3 {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+        }
+        .power4 {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+        }
+    }
+    // #power_one > div:nth-child(1) {
+    //     background: #cfa972;
+    // }
+    // #power_one > div:nth-child(2) {
+    //     background: #654517;
+    //     grid-template-areas: "data_right data_left";
+    //     grid-template-columns: 58% 43%;
+    // }
+    // #power_one > div:nth-child(2) .data_left {
+    //     grid-area: data_left;
+    // }
+    // #power_one > div:nth-child(2) .data_right {
+    //     grid-area: data_right;
+    // }
+    // // 改樣式
+    // #power_one > div:nth-child(2) .data_left > .dotted {
+    //     color: #cfa972;
+    // }
+    // #power_one > div:nth-child(2) .data_left > p {
+    //     color: #f6e6ce;
+    // }
+}
+.power_content {
+    color: #fff;
+    text-align: center;
+    font-family: $main_text;
+    line-height: 1.8;
+    letter-spacing: 5px;
+    font-size: 26px;
+    margin: 10px 0;
+    @media screen and (max-width: 414px) {
+        line-height: 1.5;
+        font-size: 20px;
+        font-weight: 900;
+        letter-spacing: 2px;
+    }
+    .power_br {
+        @media screen and (max-width: 414px) {
+            display: none;
+        }
+    }
+}
+// 安全警語
+.warn {
+    font-size: 80px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: rgba(56, 44, 44, 0.8);
+    // padding: 5px 0;
+    letter-spacing: 5px;
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+    @media screen and(max-width: $phone) {
+        font-size: 60px;
+    }
+    @media screen and(max-width:476px) {
+        font-size: 30px;
+        // bottom: 20px;
+    }
+    @media screen and(max-width:414px) {
+        font-size: 30px;
+        // bottom: 20px;
+    }
+    @media screen and(max-width:401px) {
+        // font-size: 35px;
+        font-size: 30px;
+    }
+    @media screen and(max-width:360px) {
+        // font-size: 35px;
+        font-size: 24px;
+    }
+}
+
+// 共用class
+.title_box {
+    background: #e9464d;
+    @media screen and(max-width:768px) {
+        padding: 0 40px;
+    }
+    @media screen and(max-width:414px) {
+        padding: 10px 20px;
+    }
+}
+.fan_title {
+    position: relative;
+    // margin: 0 110px;
+
+    @media screen and (max-width: $phone) {
+        margin: 0;
+    }
+    @media screen and (max-width: 414px) {
+        margin: 0;
+    }
+    .fan_text {
+        // border: 1px solid black;
+        color: $main_color;
+        transform: translate(-5px, -5px);
+        text-align: center;
+        font-size: 62px;
+        font-family: $main_text;
+        font-weight: bold;
+        letter-spacing: 5px;
+        @media screen and (max-width: $phone) {
+            font-size: 40px;
+        }
+        @media screen and (max-width: 460px) {
+            font-size: 30px;
+        }
+        @media screen and (max-width: 414px) {
+            transform: translate(-3px, -3px);
+            font-size: 20px;
+        }
+        @media screen and (max-width: 390px) {
+            // font-size: 25px;
+        }
+    }
+    //   .fav_border{
+    //       position: absolute;
+    //       top: 10px;
+    //       left: 8px;
+    //       width: 100%;
+    //       height: 90px;
+    //       border: 1px solid white;
+    //   }
+}
+
+.mb414{
+    display: none;
+    @media screen and (max-width: 414px) {
+        display: block;
+    }
+}
